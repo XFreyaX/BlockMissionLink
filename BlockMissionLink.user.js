@@ -5,6 +5,8 @@
 // @description  Verlinke Einsätze im Chat ausblenden
 // @author       x_Freya_x
 // @include      https://www.leitstellenspiel.de/*
+// @exclude      https://*.leitstellenspiel.de/alliance_thr*
+// @exclude      https://*.leitstellenspiel.de/verban*
 // ==/UserScript==
 
 (() => {
