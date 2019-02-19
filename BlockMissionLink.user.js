@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BlockMissionLink
 // @namespace    Leitstellenspiel
-// @version      0.5
+// @version      0.6
 // @description  Verlinke Einsätze im Chat ausblenden
 // @author       x_Freya_x
 // @include      https://www.leitstellenspiel.de/*
@@ -35,28 +35,21 @@
         let cl = document.getElementById('mission_chat_messages');
         let cll = cl.children.length;
 
-        if($('#blue_circle').css('background-color') !== 'rgb(0, 0, 255)'){
-            for (i = 0; i < cll; i++) {
-                let it = cl.children[i];
-                let ih = it.innerHTML;
-                let ii = ih.indexOf('/missions/');
-                if (ii !== -1) {
-                        it.style.display = 'none';
+        for (i = 0; i < cll; i++) {
+            let it = cl.children[i];
+            let ih = it.innerHTML;
+            let ii = ih.indexOf('/missions/');
+            if (ii !== -1) {
+                if($('#blue_circle').css('background-color') !== 'rgb(0, 0, 255)'){
+                    it.style.display = 'none';
+                } else {
+                    it.style.display = '';
                 }
             }
-        } else {
-            for (i = 0; i < cll; i++) {
-                let it = cl.children[i];
-                let ih = it.innerHTML;
-                let ii = ih.indexOf('/missions/');
-                if (ii !== -1) {
-                        it.style.display = '';
-                }
-            }
-            clearInterval(timerId)
         }
     }
 
+    refreshData();
     let timerID = setInterval(refreshData, 10000);
 
 })
