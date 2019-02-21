@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         BlockMissionLink
 // @namespace    Leitstellenspiel
-// @version      0.6
+// @version      0.7
 // @description  Verlinke Einsätze im Chat ausblenden
 // @author       x_Freya_x
 // @include      https://www.leitstellenspiel.de/*
+// @exclude      https://www.leitstellenspiel.de/users/sign_up
 // @exclude      https://www.leitstellenspiel.de/verband*
 // @exclude      https://www.leitstellenspiel.de/alliance_threads*
 // @exclude      https://www.leitstellenspiel.de/alliances*
