@@ -11,6 +11,7 @@
 // @exclude      https://www.leitstellenspiel.de/alliances*
 // @exclude      https://www.leitstellenspiel.de/alliance_logfiles*
 // @exclude      https://www.leitstellenspiel.de/schoolings*
+// @exclude      https://www.leitstellenspiel.de/credits*
 // @require      https://code.jquery.com/jquery-3.3.1.js
 // ==/UserScript==
 
