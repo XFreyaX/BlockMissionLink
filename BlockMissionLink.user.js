@@ -43,6 +43,7 @@
         if($('#blue_circle').css('background-color') == 'rgb(0, 0, 255)'){
             $("#blue_circle").css({'background-color':'grey'});
             sessData_set('BML_active', 'TRUE');
+            refreshData_BML();
         } else {
             $("#blue_circle").css({'background-color':'rgb(0, 0, 255)'});
             sessData_set('BML_active', 'FALSE');
