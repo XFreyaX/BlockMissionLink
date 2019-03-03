@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BlockMissionLink
 // @namespace    Leitstellenspiel
-// @version      1.1
+// @version      1.2
 // @description  Verlinke Einsätze im Chat ausblenden
 // @author       x_Freya_x
 // @include      https://www.leitstellenspiel.de/*
@@ -29,7 +29,6 @@
     // $("head").append(s);
 
     if ($('#blue_circle').length === 0) {
-        console.log('BML install');
         $(".nav.navbar-nav.navbar-right").not(".hidden-xs").append('<li><a id="blockchatmission" class="blockchatmission"><div id="blue_circle" style="background-color: rgb(0, 0, 255);' + circle + '"><span id="filter" class="glyphicon glyphicon-fire"></span></div></a></li>');
     }
 
@@ -47,9 +46,10 @@
         let timerID = setInterval(refreshData_BML, 10000);
     } else {
         console.log('BML chk active false clr');
-        if (sessData_get('BML_active') !== null) {
-            console.log(sessData_get('BML_active'));
-            clearInterval(timerID);
+        if ((sessData_get('BML_active') == 'FALSE') || (sessData_get('BML_active') == null)) {
+            if (typeof timerID !== 'undefined') {
+                clearInterval(timerID);
+            }
         }
     }
 
