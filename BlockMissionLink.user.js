@@ -42,7 +42,6 @@
     if (sessData_get('BML_active') == 'TRUE') {
         let timerID = setInterval(refreshData_BML, 10000);
     } else {
-        console.log('BML chk active false clr');
         if ((sessData_get('BML_active') == 'FALSE') || (sessData_get('BML_active') == null)) {
             if (typeof timerID !== 'undefined') {
                 clearInterval(timerID);
