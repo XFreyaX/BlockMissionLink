@@ -33,16 +33,13 @@
     }
 
     if (sessData_get('BML_active') == 'TRUE') {
-        console.log('BML chk active true css');
         $("#blue_circle").css({'background-color':'grey'});
         refreshData_BML();
     } else {
-        console.log('BML chk active false css');
         $("#blue_circle").css({'background-color':'rgb(0, 0, 255)'});
     }
 
     if (sessData_get('BML_active') == 'TRUE') {
-        console.log('BML chk active true timer');
         let timerID = setInterval(refreshData_BML, 10000);
     } else {
         console.log('BML chk active false clr');
@@ -55,11 +52,9 @@
 
     $("#blockchatmission").click(function() {
         if(sessData_get('BML_active') == 'TRUE'){
-            console.log('BML click true');
             $("#blue_circle").css({'background-color':'rgb(0, 0, 255)'});
             sessData_set('BML_active', 'FALSE');
         } else {
-            console.log('BML click false');
             $("#blue_circle").css({'background-color':'grey'});
             sessData_set('BML_active', 'TRUE');
             refreshData_BML();
